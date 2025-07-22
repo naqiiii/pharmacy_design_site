@@ -1,0 +1,13 @@
+{
+  "name": "dukes-pharmacy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "keywords": ["dukes pharmacy project"],
+  "author": "syed hassan raza",
+  "license": "ISC",
+  "description": "by using tailwind css i am going to make dukes pharmacy home page."
+}

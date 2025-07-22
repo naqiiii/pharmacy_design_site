@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link for dukes tab icon -->
+ <link rel="icon" type="image/png" class="rounded-full border-1" href="images/favicon/web-app-manifest-192x192.png">
+    <title>DUKES PHARMACY</title>
+    <!-- tailwind css link -->
+    <link href="src/output.css" rel="stylesheet">
+    <!-- AOS ANIMATE link -->
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      <!-- CDN LINK -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+<!--Toggle a small JS CODE -->
+<script>
+  function toggleAnswer(answerId, arrowId) {
+    const answer = document.getElementById(answerId);
+    const arrow = document.getElementById(arrowId);
+    answer.classList.toggle("hidden");
+    arrow.classList.toggle("rotate-180");
+  }
+</script>
+<!-- js code for counter from 0 to 1000 and 0 to 10 -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let counterElement = document.getElementById("counter");
+    let current = 0;
+    const target = 1000;
+    const duration = 3000; // total animation duration in ms
+    const increment = Math.ceil(target / (duration / 16)); // 16ms per frame ~ 60fps
+
+    const counterInterval = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        counterElement.textContent = "1000+";
+        clearInterval(counterInterval);
+      } else {
+        counterElement.textContent = current;
+      }
+    }, 16);
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let counterElement = document.getElementById("counter1");
+    let current = 0;
+    const target = 10;
+    const duration = 10000; // total animation duration in ms
+    const increment = Math.ceil(target / (duration / 230));
+
+    const counterInterval = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        counterElement.textContent = "10+";
+        clearInterval(counterInterval);
+      } else {
+        counterElement.textContent = current;
+      }
+    }, 230);
+  });
+</script>
+
+
+
+<!-- slides or tesrimonials link -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+<!-- Header Section -->
+<header class="bg-white py-7">
+  <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center px-4 md:px-12">
+
+    <!--dukes Logo -->
+    <div>
+      <img src="images/logo.png" alt="main logo" class="w-50 md:w-60 hover:cursor-pointer">
+    </div>
+
+    <!-- Contact Info -->
+    <div class="flex flex-wrap items-center gap-11 ">
+      <div class="flex items-center space-x-5">
+        <div class="p-2 bg-[#eff8ec] rounded-full">
+          <img src="images/ph.png" alt="phone logo" class="w-7 h-7 hover:cursor-pointer">
+        </div>
+        <div>
+          <h2 class="font-medium text-[#0B1425] text-sm md:text-base">Call us</h2>
+          <p class="text-[#394B60] text-sm md:text-base">020 8883 9072</p>
+        </div>
+      </div>
+      <!-- Divider -->
+      <div class="w-1 h-20 bg-gray-100"></div>
+      <!-- Time table -->
+      <div class="flex items-center space-x-4">
+        <div class="p-2 bg-[#eff8ec] rounded-full">
+          <img src="images/time.png" alt="clock" class="w-7 h-7">
+        </div>
+        <div>
+          <h2 class="font-medium text-[#0B1425] text-sm md:text-base">Mon-Fri 8am-6pm</h2>
+          <p class="text-[#394B60] text-sm md:text-base">Sat 9am to 5pm, Sun Closed</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Button -->
+    <div class="text-white bg-[#74B660] font-bold p-4 px-7 hover:cursor-pointer
+      hover:bg-[#0E64B4] rounded-tl-3xl rounded-br-3xl text-sm md:text-base">
+      Book Online
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="bg-[#0E64B4] text-white font-semibold mt-6">
+    <div class="max-w-6xl mx-auto flex items-center space-x-5 p-6">
+      <div class="hover:text-[#74B660] hover:cursor-pointer">Home</div>
+
+      <!-- Travel Clinic part -->
+      <div class="relative group">
+        
+     <span class="flex items-center gap-1 hover:text-[#74B660] cursor-pointer">
+           Travel Clinic
+  <svg class="w-4 h-4 " fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+    </span>
+        <!-- hidden list -->
+        <div class="absolute left-0 mt-2 bg-white text-black shadow-lg opacity-0 invisible group-hover:opacity-100
+         group-hover:visible transition-all duration-600 w-57 z-50">
+          <div class="px-4 py-2 hover:bg-[#0E64B4] border-b border-dotted border-[#0E64B4] hover:text-white cursor-pointer">
+            Travel Vaccination</div>
+          <a href="#" class="block px-4 py-3 hover:bg-[#0E64B4] border-b border-[#0E64B4] border-dotted hover:text-white cursor-pointer">
+            Yellow Fever Vaccination</a>
+          <a href="#" class="block px-4 py-3 hover:bg-[#0E64B4] border-b border-[#0E64B4] border-dotted hover:text-white cursor-pointer">
+            Speciality Vaccine</a>
+          <a href="#" class="block px-4 py-3 hover:bg-[#0E64B4] border-b border-[#0E64B4] border-dotted hover:text-white cursor-pointer">
+            Antimalarials</a>
+          <a href="#" class="block px-4 py-3 hover:bg-[#0E64B4] hover:text-white cursor-pointer">
+            Hajj And Umrah Vaccine</a>
+        </div>
+      </div>
+
+      <!-- Prescriptions part -->
+      <div class="relative group">
+        <span class="flex items-center gap-1 hover:text-[#74B660] cursor-pointer">
+           Prescriptions
+  <svg class="w-4 h-4 " fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+    </span>
+        <!-- hidden content list -->
+        <div class="absolute left-0 mt-2 bg-white text-black shadow-lg opacity-0 invisible group-hover:opacity-100
+         group-hover:visible transition-all duration-600 w-57 z-50">
+          <a href="#" class="block px-4 py-3 hover:bg-[#0E64B4] border-b border-[#0E64B4] border-dotted hover:text-white cursor-pointer">
+            Private Prescription</a>
+          <a href="#" class="block px-4 py-3 hover:bg-[#0E64B4] border-b border-[#0E64B4] border-dotted hover:text-white cursor-pointer">
+            EPS Nomination</a>
+          <a href="#" class="block px-4 py-3 hover:bg-[#0E64B4] hover:text-white cursor-pointer">
+            Repeat Prescription</a>
+        </div>
+      </div>
+
+      <a href="#" class="hover:text-[#74B660]">Vaccine Prices</a>
+
+      <!-- Services part-->
+      <div class="relative group">
+       <span class="flex items-center gap-1 hover:text-[#74B660] cursor-pointer">
+           Services
+  <svg class="w-4 h-4 " fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+    </span>
+        <div class="absolute left-0 mt-2 bg-white text-black shadow-lg opacity-0 invisible group-hover:opacity-100
+         group-hover:visible transition-all duration-600 w-57 z-50">
+          <div class="px-4 py-4 hover:bg-[#0E64B4] border-[#0E64B4] border-b border-dotted hover:text-white cursor-pointer">
+            Full Vaccination</div>
+          <a href="#" class="block px-4 py-3 hover:bg-[#0E64B4] border-[#0E64B4]  border-b border-dotted hover:text-white cursor-pointer">
+            Erectile DysInfection</a>
+          <a href="#" class="block px-4 py-3 hover:bg-[#0E64B4] border-[#0E64B4] border-b border-dotted hover:text-white cursor-pointer">
+            Hair Loss</a>
+          <a href="#" class="block px-4 py-3 hover:bg-[#0E64B4] border-[#0E64B4] border-b border-dotted hover:text-white cursor-pointer">
+            Weight Loss</a>
+          <a href="#" class="block px-4 py-3 hover:bg-[#0E64B4] hover:text-white cursor-pointer">
+            All Services</a>
+        </div>
+      </div>
+
+      <a href="#" class="hover:text-[#74B660]">Contact</a>
+
+      <!-- Social Icons -->
+      <div class="ml-auto flex space-x-5">
+        <img class="hover:cursor-pointer h-5 w-5" src="./images/facebook8.PNG" alt="facebook">
+        <img class="hover:cursor-pointer h-5 w-5" src="./images/twitter8.PNG" alt="twitter">
+         <img class="hover:cursor-pointer h-5 w-5" src="./images/instagram1.png" alt="instagram">
+         <img class="hover:cursor-pointer h-5 w-5" src="./images/linkedin2.PNG" alt="linkedin">
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center min-h-[750px] sm:h-[700px]  bg-[url('/images/hill.png')]">
+    <div class="absolute left-1/2 top-1/6 transform -translate-x-1/2 px-4 md:px-8 w-full max-w-6xl" data-aos="fade-up"
+     data-aos-duration="2000">
+      <h1 class="text-white text-4xl sm:text-5xl md:text-6xl font-bold leading-tight md:leading-[5rem]">
+        Expert Travel Health <br> Advice and Vaccines
+      </h1>
+      <p class="text-white mt-4 text-sm sm:text-base md:text-lg">
+        Book your pre-travel consultation with our travel health experts.
+      </p>
+
+      <div class="text-white bg-[#74B660] font-bold p-4 px-7 sm:py-4 sm:px-6 hover:cursor-pointer mt-10
+        hover:bg-[#0E64B4] rounded-tl-3xl rounded-br-3xl text-sm md:text-base w-fit">
+        Discover More
+      </div>
+    </div>
+
+    <!-- Curved SVG -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+      <svg class="relative block w-full h-[200px]" viewBox="0 0 1440 250" preserveAspectRatio="none">
+        <path fill="#ffffff" d="M0,160 C360,250 1080,0 1440,160 L1440,250 L0,320 Z"></path>
+      </svg>
+    </div>
+  </section>
+</header>
+
+<!-- Cards Section -->
+<div class="w-full px-4 md:px-8 relative -mt-[250px]">
+  <div class="flex flex-col md:flex-row gap-6 md:gap-2 items-start justify-center">
+  
+    <div class="bg-white border-b-[#74B660] w-[520px] md:w-[340px] md:h-[300px] border-b-4 hover:cursor-pointer
+      rounded-md hover:border-b-[#0E64B4] shadow-sm">
+      <div class="flex items-center justify-center mt-6">
+        <div class="w-18 h-18 rounded-full bg-[#eff8ec] flex items-center justify-center">
+          <img src="./images/insect.png" alt="insect">
+        </div>
+      </div>
+      <h1 class="text-[#0F2349] font-medium text-2xl md:text-2xl text-center mt-6">Antimalarials</h1>
+      <p class="text-[#394B60]  text-sm md:text-base text-center mt-4 px-4 pb-6">
+        Get your antimalarials for your next trip.<br>
+        Safe and convenient access to antimalarials. Book your appointment.
+      </p>      
+    </div>
+
+    <div class="bg-white border-b-[#74B660] w-[320px] md:w-[340px] md:h-[300px] border-b-4 hover:cursor-pointer
+      rounded-md hover:border-b-[#0E64B4] shadow-sm">
+      <div class="flex items-center justify-center mt-6">
+        <div class="w-18 h-18 rounded-full bg-[#eff8ec] flex items-center justify-center">
+          <img src="./images/plane.png" alt="plane">
+        </div>
+      </div>
+      <h1 class="text-[#0F2349] font-medium text-2xl md:text-2xl text-center mt-6">Hajj and Umrah Vaccine</h1>
+      <p class="text-[#394B60]  text-sm md:text-base text-center mt-4 px-4 pb-6">
+        Get the meningitis ACWY vaccine and certificate from 
+        our travel clinic for Hajj and Umrah. Bookyour appointment online.
+      </p>    
+    </div>
+
+    <div class="bg-white border-b-[#74B660] w-[320px] md:w-[400px] md:h-[300px] border-b-4 hover:cursor-pointer
+      rounded-md hover:border-b-[#0E64B4] shadow-sm">
+      <div class="flex items-center justify-center mt-6">
+        <div class="w-18 h-18 rounded-full bg-[#eff8ec] flex items-center justify-center">
+          <img src="./images/inject.png" alt="inject">
+        </div>
+      </div>
+      <h1 class="text-[#0F2349] text-2xl font-medium md:text-2xl text-center mt-6">Travel Vaccination</h1>
+      <p class="text-[#394B60] text-sm md:text-base text-center mt-4 px-4 pb-6">
+        We offer a wide range of vaccinations (including yellow fever),
+        anti-malarials and travel accessories.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- STATS PORTION -->
+<section class="w-full h-150 mt-14 ">
+<div class="max-w-6xl flex flex-row left-[150px] absolute">
+  <div class="relative left-8">
+     <div class="bg-[#eff8ec] rounded-lg text-center w-50 h-30 flex flex-col justify-center left-5 relative">
+        <h1 class="font-bold text-4xl text-[#0E64B4] " id="counter">
+          1000+
+        </h1>
+        <p class="text-[#394B60] font-bold">Happy Patients</p>
+      </div>
+      <div class="w-55 h-80 bg-[url('/images/pic2.png')] mt-4 bg-cover bg-center rounded-sm">
+      </div>
+  </div>
+  <div class="relative left-10">
+     <div class="w-55 h-80 bg-[url('/images/pic.png')] bg-cover bg-center rounded-sm">
+      </div>
+      <div class="  mt-4 bg-[#eff8ec] p-6 rounded-lg text-center w-50 h-30 flex flex-col justify-center relative left-4">
+        <h1 class="font-extrabold text-4xl text-[#74B660]" id="counter1">
+          10+
+        </h1>
+        <p class="font-bold">Years of experience</p>
+      </div>
+  </div>
+  <div class="relative left-6">  
+  <div class="lg:max-w-6xl relative left-8">
+    <p class="text-[#0E64B4] font-medium text-lg">
+      About us
+    </p>
+    <h1 class="font-bold text-3xl md:text-4xl leading-tight text-[#0F2349] mt-2">
+      Providing NHS and private<br> services
+    </h1>
+    <p class="text-[#394B60] mt-4 leading-loose">
+      Dukes Pharmacy is a well-established community pharmacy based in the Muswell Hill.
+      We provide a wide range of NHS and private health services. We are passionate about providing high-quality
+      healthcare products and services to our patients and customers.
+      <br>
+      Our innovative and reasonably-priced products and over-the-counter medicine range, such as 
+      blood pressure monitors, painkillers and allergy relievers, are designed to improve community health.
+      We also offer a suite of convenient professional health check services, including blood pressure checks,
+      all performed in our purpose-built private consultation room.
+    </p>
+    <div class="text-white bg-[#74B660] font-bold py-2 px-6 sm:py-4 sm:px-7 hover:cursor-pointer mt-6
+        hover:bg-[#0E64B4] rounded-tl-3xl rounded-br-3xl text-sm md:text-base w-fit">
+      Read More
+    </div>
+  </div>
+  </div>
+</div>
+</section>
+
+
+<!-- services portion -->
+<div class="w-full h-[400px] bg-[url('/images/section.png')] bg-cover bg-center -mt-5">
+  <p class="text-white text-center pt-20">
+    What We Offer <br>
+    <span class="text-4xl font-extrabold">Our Services</span>
+  </p> 
+</div>
+<!-- Cards Section -->
+<div class="flex flex-wrap gap-6 -mt-50 items-center justify-center px-4 min-w-6xl ">
+  <div class="bg-white w-full sm:h-[350px] sm:w-[320px] md:w-[360px]  md:h-[400px]  hover:cursor-pointer rounded-md shadow-lg">
+    <div class="flex items-center justify-center mt-4">
+      <div class="w-full h-40 flex items-center justify-center">
+        <img src="./images/blood.png" alt="blood">
+      </div>
+    </div>
+    <h1 class="text-[#0F2349] font-medium text-2xl text-center mt-8">Blood Pressure Checking</h1>
+    <p class="text-[#394B60] text-sm md:text-base text-center mt-4 px-4 pb-6 ">
+      Have your blood pressure checked at our pharmacy.
+      We offer a free NHS Blood Pressure checking service to eligible patients.
+       <div class="border underline-offset-4 border-green-500 w-10 h-0.5
+        bg-green-500 relative left-1/2 bottom-2"></div> 
+    </p>       
+  </div>
+
+  <div class= "bg-white w-full sm:h-[350px] sm:w-[320px] md:w-[360px]  md:h-[400px]  hover:cursor-pointer rounded-md shadow-lg">
+    <div class="flex items-center justify-center mt-4">
+      <div class="w-full h-40 flex items-center justify-center">
+        <img src="./images/weight.png" alt="weight">
+      </div>
+    </div>
+    <h1 class="text-[#0F2349] font-medium text-2xl text-center mt-8">Weight Loss</h1>
+    <p class="text-[#394B60] text-sm md:text-base text-center mt-4 px-4 pb-6">
+      Our weight loss service offers a safe and convenient
+      access to expert advice and treatments to help you achieve your weight loss goals.
+      <div class="border underline-offset-4 border-green-500 w-10 h-0.5 bg-green-500
+       relative left-1/2 bottom-2"></div>
+    </p>      
+  </div>
+
+  <div class="bg-white w-full sm:h-[350px] sm:w-[320px] md:w-[360px]  md:h-[400px]  hover:cursor-pointer rounded-md shadow-lg">
+    <div class="flex items-center justify-center mt-4">
+      <div class="w-full h-40 flex items-center justify-center">
+        <img src="./images/erictile.png" alt="erictile">
+      </div>
+    </div>
+    <h1 class="text-[#0F2349] font-medium text-2xl text-center mt-8">Erectile Dysfunction</h1>
+    <p class="text-[#394B60] text-sm md:text-base text-center mt-4 px-4 pb-6">
+      Struggling with erectile dysfunction? Dukes Pharmacy offers private consultations and a 
+      variety of treatment options to help you regain confidence and intimacy.
+      <div class="border underline-offset-4 border-green-500 w-10 h-0.5 bg-green-500 relative left-1/2 bottom-2"></div>
+    </p>      
+  </div>
+</div>
+
+
+<!-- FAQ's part -->
+<div class="flex items-center justify-center mt-14">
+  <div class=" bg-[#eff8ec] rounded-lg text-center min-w-6xl min-h-85">
+    <p class="text-[#0E64B4] font-medium mt-4">FAQ's</p>
+    <h1 class="text-[#0F2349] text-4xl font-bold">Frequent Questions</h1>
+    <div class="columns-2 space-y-4 mt-6 m-4">
+      <div class="bg-white p-4 rounded-lg text-[#0F2349] font-medium">
+        <!-- a small onclick js function part for toggle -->
+        <button onclick="toggleAnswer('answer1', 'arrow1')" class="flex items-center w-full justify-between cursor-pointer">
+          <span class="text-sm">What is the best number to contact the pharmacy?</span>
+          <svg id="arrow1" class="w-4 h-4 " fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+        </button>
+        <div id="answer1" class="hidden mt-2 text-sm font-normal px-2">
+          You can talk to a member of our pharmacy on <strong class="text-[#0E64B4]">020 8883 9072</strong>
+        </div>
+      </div>
+      <div class="bg-white p-4 rounded-lg text-[#0F2349] font-medium">
+        <button onclick="toggleAnswer('answer2', 'arrow2')" class="flex items-center w-full justify-between cursor-pointer">
+          <span class="text-sm">How can i find the pharamcy, what is the address?</span>
+          <svg id="arrow2" class="w-4 h-4 " fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+        </button>
+        <div id="answer2" class="hidden mt-2 text-sm font-normal px-2">
+          330 Muswell Hill Broadway, London N10 1DJ
+        </div>
+      </div>
+      <div class="bg-white p-4 rounded-lg text-[#0F2349] font-medium">
+        <button onclick="toggleAnswer('answer3', 'arrow3')" class="flex items-center w-full justify-between cursor-pointer">
+          <span class="text-sm">330 Muswell Hill Broadway, London N10 1DJ</span>
+          <svg id="arrow3" class="w-4 h-4 " fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+        </button>
+        <div id="answer3" class="hidden mt-2 text-sm font-normal px-2">
+          Yes, we provide travel vaccination at our pharmacy.</strong>.
+        </div>
+      </div>
+      <div class="bg-white p-4 rounded-lg text-[#0F2349] font-medium">
+        <button onclick="toggleAnswer('answer4', 'arrow4')" class="flex items-center w-full justify-between cursor-pointer">
+          <span class="text-sm">Can i buy Antimalarials?</span>
+         <svg id="arrow4" class="w-4 h-4 " fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+        </button>
+        <div id="answer4" class="hidden mt-2 text-sm font-normal px-2">
+         Yes, you can buy Antimalarials at our pharmacy.
+        </div>
+      </div>
+      <div class="bg-white p-4 rounded-lg text-[#0F2349] font-medium">
+        <button onclick="toggleAnswer('answer5', 'arrow5')" class="flex items-center w-full justify-between cursor-pointer">
+          <span class="text-sm">Can i check vaccine prices?</span>
+          <svg id="arrow5" class="w-4 h-4 " fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+        </button>
+        <div id="answer5" class="hidden mt-2 text-sm font-normal px-2">
+        Yes, you can check vaccine price on our website.
+        </div>
+      </div>
+      <div class="bg-white p-4 rounded-lg text-[#0F2349] font-medium">
+        <button onclick="toggleAnswer('answer6', 'arrow6')" class="flex items-center w-full justify-between cursor-pointer">
+          <span class="text-sm">Do you dispense private prescriptions?</span>
+          <svg id="arrow6" class="w-4 h-4 " fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+        </button>
+        <div id="answer6" class="hidden mt-2 text-sm font-normal px-2">
+         Is the pharmacy closed on Sunday?
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- slides part --> 
+<div class="relative bg-[url('/images/b1.png')] h-[500px] w-full mt-20 bg-cover bg-center">
+  <div class="absolute top-10 left-1/2 transform -translate-x-1/2">
+    <div class="text-center">
+      <h1 class="text-white font-medium">
+        Testimonials
+      </h1>
+      <h1 class="text-white font-bold text-4xl">
+        Customer Reviews
+      </h1>
+    </div>
+  </div>
+</div>
+<!-- Swiper Section -->
+<div class="px-45 md:px-45 -mt-90">
+  <div class="swiper testimonialSwiper">
+    <div class="swiper-wrapper">
+    </div> 
+  </div>  
+</div>
+<!-- link of js file -->
+<script src="./src/js/app.js"></script>
+
+
+<!-- Blogs part -->
+<div class="w-full h-[400px] mt-20">
+  <p class="text-[#0E64B4] text-center font-medium pt-20">
+    Blogs <br>
+    <span class="text-4xl font-bold text-black">Our Blogs</span>
+  </p> 
+</div>
+<!-- Cards Section -->
+<div class="flex flex-wrap -mt-55  items-center justify-center px-4">
+<div class="min-w-6xl flex gap-12">
+  <div class="bg-white w-full sm:w-[420px] md:w-[340px]  hover:cursor-pointer rounded-md shadow-sm m-4 p-4 ">
+    <div class="flex items-center justify-center mt-4">
+      <div class="w-full h-35 flex items-center justify-center">
+        <img src="./images/1st.png" alt="blood">
+      </div>
+    </div><br>
+    <h1 class="text-black font-medium text-2xl text-center mt-6">Coming Soon</h1>
+    <p class="text-[#394B60] text-sm md:text-base text-center mt-4 px-4 pb-6 ">
+      Blog post is coming soon
+    </p> 
+    <a href="#" class="text-[#74B660] font-bold ">Read more →</a>
+  </div>
+
+  <div class="bg-white w-full sm:w-[420px] md:w-[340px]  hover:cursor-pointer rounded-md shadow-sm m-2 p-2">
+    <div class="flex items-center justify-center mt-4">
+      <div class="w-full h-40 flex items-center justify-center">
+        <img src="./images/2nd.png" alt="weight">
+      </div>
+    </div><br>
+    <h1 class="text-black font-medium text-2xl text-center mt-6">Coming Soon</h1>
+    <p class="text-[#394B60] text-sm md:text-base text-center mt-4 px-4 pb-6">
+      Blog post is coming soon
+    </p>  
+    <a href="#" class="text-[#74B660] font-bold ">Read more →</a>    
+  </div>
+
+  <div class="bg-white w-full sm:w-[420px] md:w-[340px]  hover:cursor-pointer rounded-md shadow-sm
+   m-2 p-2">
+    <div class="flex items-center justify-center mt-4">
+      <div class="w-full h-40 flex items-center justify-center">
+        <img src="./images/3rd.png" alt="erictile">
+      </div>
+    </div><br>
+    <h1 class="text-black font-medium text-2xl text-center mt-6">Coming Soon</h1>
+    <p class="text-[#394B60] text-sm md:text-base text-center mt-4 px-4 pb-6">
+     Blog post is coming Soon
+    </p> 
+    <a href="#" class="text-[#74B660] font-bold ">Read more →</a>     
+  </div>
+</div>
+</div>
+
+
+<!--send feedback part -->
+<div class="bg-[url('/images/Section2.png')] min-h-[750px] w-full mt-20 bg-cover
+bg-center flex items-center justify-center px-4 sm:px-8 md:px-16 py-10">
+  <div class="flex flex-col lg:flex-row items-center justify-center gap-10 max-w-7xl w-full">   
+    <div class="max-w-xl text-white text-center lg:text-left">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">Get In Touch Now</h1>
+      <p class="text-sm sm:text-base leading-relaxed">
+        Our Pharmacy has a positive attitude to receiving comments, suggestions or
+        complaints from people. We wish to offer people an explanation for any concern
+        they have and use feedback constructively to improve the services provided by
+        the pharmacy.</p>
+      <div class="flex items-center justify-center lg:justify-start gap-4 mt-6">
+        <div class="bg-white p-3 rounded-full shadow-md">
+          <img src="images/phone1.png" alt="phone icon" class="w-6 h-6 cursor-pointer">
+        </div>
+        <div>
+          <h2 class="text-white text-sm sm:text-base font-medium">Emergency No.</h2>
+          <p class="text-white text-lg sm:text-xl font-bold">020 8883 9072</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!--feedback part-->
+    <div class="bg-[#0E64B4]  w-100 md:w-140 rounded-lg px-6 py-8">
+      <div class="space-y-6">
+        <div class="text-slate-400 border-b border-slate-400">
+          <input type="text" placeholder="Name" class="w-full h-10 bg-transparent text-white
+           placeholder-slate-400 hover:shadow-lg focus:outline-none" />
+        </div>
+        <div class="text-slate-400 border-b border-slate-400">
+          <input type="text" placeholder="Email" class="w-full h-10 bg-transparent text-white
+           placeholder-slate-400 hover:shadow-lg focus:outline-none" />
+        </div>
+        <div class="text-slate-400 border-b border-slate-400">
+          <input type="text" placeholder="Phone" class="w-full h-10 bg-transparent text-white
+           placeholder-slate-400 hover:shadow-lg focus:outline-none" />
+        </div>
+        <div class="text-slate-400 border-b border-slate-400">
+          <label for="feedback" class="block text-slate-400 font-medium mb-2"></label>
+          <textarea id="feedback" name="feedback" rows="2" placeholder="Write your feedback here..."
+            class="w-full bg-transparent text-white placeholder-slate-400 hover:shadow-lg 
+            focus:outline-none py-2 resize-none"></textarea>
+        </div>
+       <div
+          class="duration-300 text-white bg-[#74B660] font-bold py-2 px-4 sm:py-3 sm:px-6
+           hover:cursor-pointer
+           flex justify-center items-center hover:bg-white rounded-tl-3xl rounded-br-3xl text-sm
+            md:text-base w-full hover:text-[#0E64B4]">
+          Send Message Now
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+
+<!-- a small script for aos animation -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration:"1000"
+    });
+  </script>
+
+<!-- Footer part -->
+<footer class="bg-[#0B1425] py-10 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-wrap justify-center">
+      <div class="w-full sm:w-1/2 lg:w-1/4 px-6 py-4">
+
+        <h1 class="text-white font-bold mb-3 mt-8">Useful Links</h1>
+        <ul class="text-white hover:cursor-pointer font-light">
+          <li class="hover:text-[#74B660] mt-3">Home</li>
+          <li class="hover:text-[#74B660] mt-3">About Us</li>
+          <li class="hover:text-[#74B660] mt-3">Contact Us</li>
+          <li class="hover:text-[#74B660] mt-3">Services</li>
+          <li class="hover:text-[#74B660] mt-3">Blogs</li>
+        </ul>
+      </div>
+
+      <div class="w-full sm:w-1/2 lg:w-1/4 px-6 py-4">
+        <h1 class="text-white font-bold mb-3 mt-8">Pharmacy Info</h1>
+        <ul class="text-white font-light">
+          <li class="mt-3">Company Registered In: England and Wales</li>
+          <li class="mt-3">Company Reg Number: 06763818</li>
+          <li class="mt-3">GPhC Premises Reg No: 1087867</li>
+          <li class="mt-3">Superintendent: Zain Khan</li>
+          <li class="mt-3">GPhC Registration No: 2061254</li>
+        </ul>
+      </div>
+
+      <div class="w-full sm:w-1/2 lg:w-1/4 px-6 py-4">
+        <h1 class="text-white font-bold mb-3 mt-8">Opening Hours</h1>
+        <ul class="text-white font-light">
+          <li class="mt-3">MONDAY - FRIDAY 08:00 to 18:00</li>
+          <li class="mt-3">SATURDAY 09:00 to 17:00</li>
+          <li class="mt-3">GPhC Premises Reg No: 1087867</li>
+          <li class="mt-3">SUNDAY: Closed</li>
+          <li class="mt-3">BANK HOLIDAYS: Closed</li>
+        </ul>
+      </div>
+
+      <div class="w-full sm:w-1/2 lg:w-1/4 px-6 py-4">
+        <h1 class="text-white font-extrabold mb-3 mt-8">Contact Us</h1>
+        <ul class="text-white font-light">
+          <li>
+            <div class="flex items-center gap-4 mt-4 hover:cursor-pointer">
+              <img src="images/phone.png" alt="phone icon" class="w-4 h-4">
+              <p class="text-white text-sm sm:text-xl hover:text-[#74B660]">020 8883 9072</p>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center gap-4 mt-4 hover:cursor-pointer">
+              <img src="images/email3.png" alt="email icon" class="w-4 h-4">
+              <p class="text-white text-sm sm:text-xl hover:text-[#74B660]">Contact Us</p>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center gap-4 mt-4 hover:cursor-pointer">
+              <img src="images/location 1.png" alt="location icon" class="w-4 h-4">
+              <p class="text-white text-sm sm:text-xl hover:text-[#74B660]">
+                330 Muswell Hill Broadway, London N10 1DJ
+              </p>
+            </div>
+          </li>
+       <li>
+ <!-- Social Icons -->
+            <div class="ml-auto mr-[130px] flex  items-center justify-center sm:justify-end gap-4 py-4 mt-4">
+            <img class="w-6 h-6 hover:cursor-pointer bg-[#0B1425]" src="./images/facebook5.PNG" alt="facebook">
+           <img class="w-6 h-6 hover:cursor-pointer bg-[#0B1425]" src="./images/twitter1.png" alt="twitter">
+           <img class="w-6 h-6 hover:cursor-pointer bg-[#0B1425]" src="./images/linkedin1.png" alt="linkedin">
+          <img class="w-6 h-6 hover:cursor-pointer bg-[#0B1425]" src="./images/instagram1.png" alt="instagram">
+           </div>
+      </li>
+        </ul>
+      </div>
+    </div> </div>
+    <!-- Bottom Footer-->
+    <div class="border-t border-slate-600 mt-10 pt-4 w-full"> </div>
+      <div class=" max-w-7xl flex flex-row sm:flex-row justify-between items-center relative  left-20 text-sm text-white text-center sm:text-left gap-2 sm:gap-0">
+        <p>Copyright 2025 © Dukes Pharmacy. All rights reserved.</p>
+        <p>
+          Developed By
+          <span class="text-[#0E64B4]">
+            <a href="#" class="hover:cursor-pointer">PharmaFocus</a>
+          </span>
+        </p>
+      </div>
+</footer>
+</html>

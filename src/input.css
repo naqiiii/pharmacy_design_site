@@ -1,0 +1,10 @@
+
+/* from google fonts Source Sans Pro */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+@import "tailwindcss";
+
+@theme{
+
+    --font-primary:"Rubik", sans-serif;
+}
