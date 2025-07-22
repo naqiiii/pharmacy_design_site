@@ -29,8 +29,7 @@ A modern, responsive frontend design for Duke’s Pharmacy built with **HTML**, 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/dukes-pharmacy.git
-   cd dukes-pharmacy
+   git clone https://github.com/naqiiii/dukes-pharmacy.git
 👨‍💻 Author
 Syed Hassan Raza<br>
 BSCS – PIEAS University<br>
